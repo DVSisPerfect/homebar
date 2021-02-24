@@ -77,8 +77,6 @@ export default {
     text-decoration: none;
 }
 
-/* Дополнительно */
-
 .menu-link{
     text-transform: uppercase;
     font-weight: bold;
@@ -143,8 +141,6 @@ export default {
     margin-bottom: 10px;
 }
 
-/* Дополнительно */
-
 .card-button{
     cursor: pointer;
 }
@@ -161,6 +157,7 @@ export default {
     color: white;
 }
 
+/* FLEX */
 /* HEADER */
 .menu{
     display: flex;
