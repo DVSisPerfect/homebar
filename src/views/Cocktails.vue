@@ -1,12 +1,14 @@
 <template>
-        <div class = 'cards-section'>
-            <div class = 'container' >
-                <div class = 'cards-text'>
+        <div class = 'container'>
+            
+            <div class = 'cards-section' >
+                <div class = 'cards-pre'>
                     <h1 class = 'cards-title'>Best cocktails of all time</h1>
                     <div class = 'cards-description'>Don't know what to choose - use our <a href = '#' class = 'cards-description'>Russian roulette</a></div>
                 </div>
 
                 <div class = 'cards'>
+                    <div class = 'cards-background'></div>
                     <div class = 'cards-row'>
                         <div class = 'card' v-for="cocktail in cocktails" :key="cocktail.id">
                             <img class = 'card-img' :src="cocktail.src">
@@ -15,12 +17,13 @@
                                 <div class = 'card-text'>{{cocktail.composition}}
                                     </div>
                                 <div class = 'card-button'>
-                                    <a class = 'card-link' href = '#'>View Details</a>
+                                    <a class = 'card-link'>Try me</a>
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>                 
                 </div>
+
             </div>
         </div>
 </template>
@@ -46,37 +49,53 @@ export default {
 }
 
 .container{
-    max-width: 1140px;  
-    padding: 0 15px;
     margin: 0 auto;
 }
 
-.cards-section{
-    padding: 50px 0px;
-    background: #a55248;
+.cards-pre {
+    padding: 15px 0;
+    background-color: black;
 }
 
 .cards-title, .cards-description{
-    color: #140c12;
+    color: whitesmoke;
     text-align: center;
 }
 
+.cards-row{
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.cards {
+    background-image: url('../img/homecocktail.jpg');    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
 .card{
     padding: 25px;
     margin-top: 25px;
     width: 25%;
-    background: #a55248;
-    box-shadow: 0px 2px 7px 0px #2a090a;
+    background: transparent;
     text-align: center;
 }
 
 .card-img{
-    width: 100%;
+    width: 440px;
+    height: 265px;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
-.card-link{
-    text-decoration: none;
-    color: white;
+.card-title, .card-text{
+    margin-bottom: 10px;
+    color: whitesmoke;
 }
 
 .card-button{
@@ -87,14 +106,9 @@ export default {
     cursor: pointer;
 }
 
-.card-title, .card-text{
-    margin-bottom: 10px;
+.card-link{
+    text-decoration: none;
+    color: white;
 }
 
-.cards-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 </style>

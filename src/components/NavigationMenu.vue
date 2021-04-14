@@ -28,8 +28,8 @@ export default {
 }
 
 .container {
-    padding: 0 15px;
     margin: 0 auto;
+    background-color: black;
 }
 
 .header-row {
@@ -41,6 +41,7 @@ export default {
 
 .logo-img {
     max-height: 200px;
+    filter: invert(100%);
 }
 
 .menu {
@@ -58,7 +59,7 @@ export default {
 .menu-link {
     font-family: Courier New, monospace;
     font-size: 24px;
-    color: #140c12;
+    color: whitesmoke;
     text-decoration: none;    
     text-transform: uppercase;
     font-weight: bold;

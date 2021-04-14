@@ -20,4 +20,7 @@ export default {
 body {
   margin: 0px;
 }
+::-webkit-scrollbar {
+  width: 0px;
+}
 </style>
