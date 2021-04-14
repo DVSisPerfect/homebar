@@ -49,12 +49,14 @@ export default {
 }
 
 .container{
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 55px;    
+    background-color: black;
 }
 
 .cards-pre {
     padding: 15px 0;
-    background-color: black;
 }
 
 .cards-title, .cards-description{
@@ -78,6 +80,7 @@ export default {
     background-position: center;
     background-size: cover;
 }
+
 .card{
     padding: 25px;
     margin-top: 25px;

@@ -1,23 +1,35 @@
 <template>
     <div class = 'container'>
         <div class = 'header-row'>
-          <div class = 'header-logo'>
-            <img class = 'logo-img' src='../img/logo.png'>
-          </div>
-          <div class = 'header-menu'>
-            <ul class = 'menu'>
-              <li class = 'menu-item'><router-link to="/" exact class = 'menu-link'>Home</router-link></li>
-              <li class = 'menu-item'><router-link to="/roulette" class = 'menu-link'>Russian Roulette</router-link></li>
-              <li class = 'menu-item'><router-link to="/cocktails" class = 'menu-link'>Cocktails</router-link></li>
-            </ul>
-          </div>
+            <div class = 'header-logo' >
+                <img class = 'logo-img' src='../img/logo.png' v-if="currentRoute == 'Home'">
+                <div class = 'menu-item menu-link' v-else>Dobrosan</div>
+            </div>
+            <div class = 'header-menu'>
+                <ul class = 'menu'>
+                    <li class = 'menu-item'><router-link to="/" exact class = 'menu-link'>Home</router-link></li>
+                    <li class = 'menu-item'><router-link to="/roulette" class = 'menu-link'>Russian Roulette</router-link></li>
+                    <li class = 'menu-item'><router-link to="/cocktails" class = 'menu-link'>Cocktails</router-link></li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'NavigationMenu',
+    name: 'NavigationMenu',
+        
+    data() {
+        return {
+        }
+    },
+
+    computed: {
+        currentRoute() {
+            return this.$route.name;
+        }
+    }
 };
 </script>
 
@@ -28,6 +40,10 @@ export default {
 }
 
 .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     margin: 0 auto;
     background-color: black;
 }
@@ -45,6 +61,7 @@ export default {
 }
 
 .menu {
+    width: 100%;
     min-width: 600px;
     padding-left: 0px;
     display: flex;
