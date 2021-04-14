@@ -22,7 +22,45 @@ export default {
 </script>
 
 <style scoped>
-a.router-link-active, li.router-link-active>a {
-  font-weight: bold;
+*{
+    scroll-behavior: smooth;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;    
+}
+
+.logo-img {
+    max-height: 200px;
+}
+
+.menu {
+    min-width: 600px;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-item {
+    list-style: none;
+}
+
+.menu-link {
+    font-family: Courier New, monospace;
+    font-size: 24px;
+    color: #140c12;
+    text-decoration: none;    
+    text-transform: uppercase;
+    font-weight: bold;
 }
 </style>

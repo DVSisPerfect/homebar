@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import cocktails from '../store/cocktails';
+import cocktails from '../store/cocktails.js';
 /*eslint-disabled*/
 export default {
   name: 'Cocktails',
@@ -40,7 +40,61 @@ export default {
 </script>
 
 <style scoped>
-a.router-link-active, li.router-link-active>a {
-  font-weight: bold;
+*{
+    scroll-behavior: smooth;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    max-width: 1140px;  
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.cards-section{
+    padding: 50px 0px;
+    background: #a55248;
+}
+
+.cards-title, .cards-description{
+    color: #140c12;
+    text-align: center;
+}
+
+.card{
+    padding: 25px;
+    margin-top: 25px;
+    width: 25%;
+    background: #a55248;
+    box-shadow: 0px 2px 7px 0px #2a090a;
+    text-align: center;
+}
+
+.card-img{
+    width: 100%;
+}
+
+.card-link{
+    text-decoration: none;
+    color: white;
+}
+
+.card-button{
+    text-align: center;
+    background: #2a090a;
+    padding: 10px 70px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-title, .card-text{
+    margin-bottom: 10px;
+}
+
+.cards-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 </style>
