@@ -1,18 +1,18 @@
 <template>
     <div class = 'container'>
-        <div class = 'header-row'>
+        <header class = 'header-row'>
             <div class = 'header-logo' >
                 <img class = 'logo-img' src='../img/logo.png' v-if="currentRoute == 'Home'">
                 <div class = 'menu-item menu-link' v-else>Dobrosan</div>
             </div>
-            <div class = 'header-menu'>
+            <nav class = 'header-menu'>
                 <ul class = 'menu'>
                     <li class = 'menu-item'><router-link to="/" exact class = 'menu-link'>Home</router-link></li>
                     <li class = 'menu-item'><router-link to="/roulette" class = 'menu-link'>Russian Roulette</router-link></li>
                     <li class = 'menu-item'><router-link to="/cocktails" class = 'menu-link'>Cocktails</router-link></li>
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </header>
     </div>
 </template>
 
@@ -39,6 +39,7 @@ export default {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .container {
     position: fixed;
     top: 0;
@@ -46,6 +47,7 @@ export default {
     width: 100%;
     margin: 0 auto;
     background-color: black;
+    z-index: 99;
 }
 
 .header-row {
@@ -80,5 +82,9 @@ export default {
     text-decoration: none;    
     text-transform: uppercase;
     font-weight: bold;
+}
+
+a.router-link-active {
+    color:rgb(134, 53, 29);
 }
 </style>
