@@ -4,7 +4,9 @@
             <section class = 'cards-section' >
                 <div class = 'cards-pre'>
                     <h1 class = 'cards-title'>Best cocktails of all time</h1>
-                    <div class = 'cards-description'>Don't know what to choose - use our <a href = '#' class = 'cards-description'>Russian roulette</a></div>
+                    <div class = 'cards-description'>Don't know what to choose - use our 
+                        <router-link to="/roulette" class = 'cards-description'>Russian roulette</router-link>
+                    </div>
                 </div>
 
                 <div class = 'cards highballs'>                    
@@ -17,7 +19,7 @@
                                 <div class = 'card-text'>{{cocktail.composition}}</div>                            
                             </div>
                             <div class = 'card-button'>
-                                <a class = 'card-link'>Try me</a>
+                                <a class = 'card-link' @click="test(cocktail.id)">Try me</a>
                             </div>
                         </div>
                     </div>                 
@@ -108,7 +110,13 @@ export default {
                     break;
             }
         }
-    }
+    },
+
+    methods: {
+        test(x) {
+            alert(`Вы хотите купить ${this.cocktails[x-1].title}?`);
+        }
+    },
 
 };
 </script>
@@ -157,10 +165,11 @@ export default {
     color: whitesmoke;
     text-align: center;
     z-index: 98;
+    font-size: 36px;
 }
 
 .highballs {    
-    background-image: url('../img/homecocktail.jpg');   
+    background-image: url('../img/highball.jpg');   
 }
 
 .flutes {

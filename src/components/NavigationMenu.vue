@@ -10,6 +10,7 @@
                     <li class = 'menu-item'><router-link to="/" exact class = 'menu-link'>Home</router-link></li>
                     <li class = 'menu-item'><router-link to="/roulette" class = 'menu-link'>Russian Roulette</router-link></li>
                     <li class = 'menu-item'><router-link to="/cocktails" class = 'menu-link'>Cocktails</router-link></li>
+                    <li class = 'menu-item'><router-link to="/cart" class = 'menu-link'>Cart</router-link></li>
                 </ul>
             </nav>
         </header>
