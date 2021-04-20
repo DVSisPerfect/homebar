@@ -17,13 +17,14 @@
             </div>
         </div>
         
-        <div class = "photos" id="top-cock">
+        <div class = "photos">
             <div v-for="photo in photos" :key="photo.id">
                 <img class = "photo" :src="photo.src">
             </div>
-        </div>
+        </div>        
         
         <div class = 'top-stock'>
+            <div id="top-cock"></div>
             <div class = "stock-title" >Best cocktails of all time</div>
             <div class = "cocktails">
                 <div class = "top-cock" v-for="cocktail in stock" :key="cocktail.id">
@@ -40,14 +41,11 @@
 </template>
 
 <script>
-import photos from "../store/main-photos.js";
-import cocktails from '../store/cocktails.js';
+import { mapState } from 'vuex';
 export default {
     name: 'Home',
     data() {
         return {
-            photos,
-            cocktails,
             desc: `
                 Добро пожаловать в домашний бар ваших друзей.
                 Наслаждайтесь общением, вкусными напитками и закусками из нашего меню.
@@ -57,20 +55,36 @@ export default {
         }
     },
 
+    computed: {
+        ...mapState(['photos', 'cocktails'])
+    },
+
     mounted() {
-        for (let cocktail of cocktails) {
-            switch(cocktail.title) {
-                case '«Том Коллинз»': 
-                this.stock.push(cocktail);
-                break;
-                case '«Зомби»':
-                this.stock.push(cocktail);
-                break;
-                case '«Базиликовый Смэш»':
-                this.stock.push(cocktail);
-                break;
-            }
+        let max1 = 0;
+        let max1id = 0;
+        let max2 = 0;
+        let max2id = 1;
+        let max3 = 0;
+        let max3id = 2;
+        for (let i=0; i<this.cocktails.length; i++) {                
+            if (this.cocktails[i].likes > max1) {
+                max3 = max2;
+                max3id = max2id;
+                max2 = max1;
+                max2id = max1id;
+                max1 = this.cocktails[i].likes;
+                max1id = i;                
+            } else if (this.cocktails[i].likes > max2) {
+                max3 = max2;
+                max3id = max2id;
+                max2 = this.cocktails[i].likes;
+                max2id = i;
+            } else if (this.cocktails[i].likes > max3) {
+                max3 = this.cocktails[i].likes;
+                max3id = i;
+            }                            
         }
+        this.stock.push(this.cocktails[max1id], this.cocktails[max2id], this.cocktails[max3id]);
     }
 }
 </script>
@@ -119,7 +133,7 @@ export default {
 }
 
 .about {
-    padding: 20px 0px;
+    padding: 50px 0px 20px;
     display: flex;
     justify-content: space-evenly;
     align-items: center; 
@@ -162,6 +176,15 @@ export default {
     padding: 100px;
 }
 
+.top-stock {
+    position: relative;
+}
+
+#top-cock {
+    position: absolute;
+    top: -200px;
+}
+
 .top-cock {
     width: 100%;
     display: flex;
@@ -185,4 +208,5 @@ export default {
     max-width: 300px;
     color: whitesmoke;
 }
+
 </style>

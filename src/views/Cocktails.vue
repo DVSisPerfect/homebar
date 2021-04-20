@@ -18,9 +18,9 @@
                                 <h3 class = 'card-title'>{{cocktail.title}}</h3>
                                 <div class = 'card-text'>{{cocktail.composition}}</div>                            
                             </div>
-                            <div class = 'card-button'>
-                                <a class = 'card-link' @click="test(cocktail.id)">Try me</a>
-                            </div>
+                            <button class = 'card-button' @click="test(cocktail.id)">
+                                <div class = 'card-link' >Try me</div>
+                            </button>
                         </div>
                     </div>                 
                 </div>
@@ -34,9 +34,9 @@
                                 <h3 class = 'card-title'>{{cocktail.title}}</h3>
                                 <div class = 'card-text'>{{cocktail.composition}}</div>                            
                             </div>
-                            <div class = 'card-button'>
-                                <a class = 'card-link'>Try me</a>
-                            </div>
+                            <button class = 'card-button' @click="test(cocktail.id)">
+                                <div class = 'card-link' >Try me</div>
+                            </button>
                         </div>
                     </div>                 
                 </div>
@@ -50,9 +50,9 @@
                                 <h3 class = 'card-title'>{{cocktail.title}}</h3>
                                 <div class = 'card-text'>{{cocktail.composition}}</div>                            
                             </div>
-                            <div class = 'card-button'>
-                                <a class = 'card-link'>Try me</a>
-                            </div>
+                            <button class = 'card-button' @click="test(cocktail.id)">
+                                <div class = 'card-link' >Try me</div>
+                            </button>
                         </div>
                     </div>                 
                 </div>
@@ -66,9 +66,9 @@
                                 <h3 class = 'card-title'>{{cocktail.title}}</h3>
                                 <div class = 'card-text'>{{cocktail.composition}}</div>                            
                             </div>
-                            <div class = 'card-button'>
-                                <a class = 'card-link'>Try me</a>
-                            </div>
+                            <button class = 'card-button' @click="test(cocktail.id)">
+                                <div class = 'card-link' >Try me</div>
+                            </button>
                         </div>
                     </div>                 
                 </div>
@@ -78,14 +78,13 @@
 </template>
 
 <script>
-import cocktails from '../store/cocktails.js';
+import { mapState} from 'vuex';
 /*eslint-disabled*/
 export default {
     name: 'Cocktails',
 
     data: function () {
         return {
-            cocktails,
             highballs: [],
             flutes: [],
             olds: [],
@@ -93,8 +92,13 @@ export default {
         }
     },
 
+    computed: {
+        ...mapState(['cocktails'])
+    },
+
+    
     mounted() {
-        for (let cocktail of cocktails) {
+        for (let cocktail of this.cocktails) {
             switch(cocktail.type) {
                 case 'highball':
                     this.highballs.push(cocktail);
@@ -115,6 +119,7 @@ export default {
     methods: {
         test(x) {
             alert(`Вы хотите купить ${this.cocktails[x-1].title}?`);
+            
         }
     },
 
@@ -221,7 +226,7 @@ export default {
 
 .card-link{
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
 }
 
 </style>
