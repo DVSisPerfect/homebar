@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 //import Roulette from '../views/Roulette.vue'
 import Cocktails from '../views/Cocktails.vue'
-//import Cart from '../views/Cart.vue'
+import Cart from '../views/Cart.vue'
 
 Vue.use(VueRouter)
 
@@ -23,11 +23,11 @@ Vue.use(VueRouter)
     name: 'Cocktails',
     component: Cocktails
   },
-  /*{
+  {
     path: '/cart',
     name: 'Cart',
     component: Cart
-  },*/
+  },
 ]
 
 const router = new VueRouter({
