@@ -12,6 +12,29 @@
             <div class = 'cards highballs'>                    
                 <div class = 'cards-row'>
                     <h1 class = 'cards-header'>«Highball»</h1>
+                    <div class = 'card' v-for="cocktail in test" :key="cocktail.id">
+                        <img class = 'card-img' :src="cocktail.src" alt="Здесь обязательно будет картинка :(">
+                        <div class = 'card-body'>
+                            <h3 class = 'card-title'>{{cocktail.title}}</h3>
+                            <div class = 'card-text' v-for="(prop, name) in cocktail.composition" :key="prop.id">
+                                <div class = 'card-text' v-if="name !== 'id'">{{name}}: {{prop}}мл</div>
+                            </div>                            
+                        </div>
+                        <button class = 'card-button' @click="addToCart(cocktail.id)" v-if="cocktail.count == 0">
+                            <div class = 'card-link' >Try me</div>
+                        </button>
+                        <div class = 'card-counter' v-else>
+                            <button class = 'counter' @click="plusCounter(cocktail.id)">+</button>
+                            <h3 class = 'card-count'>{{cocktail.count}}</h3>
+                            <button class = 'counter' @click="minusCounter(cocktail.id)">-</button>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+
+            <div class = 'cards highballs'>                    
+                <div class = 'cards-row'>
+                    <h1 class = 'cards-header'>«Highball»</h1>
                     <div class = 'card' v-for="cocktail in highballs" :key="cocktail.id">
                         <img class = 'card-img' :src="cocktail.src" alt="Здесь обязательно будет картинка :(">
                         <div class = 'card-body'>
@@ -109,6 +132,24 @@ export default {
             flutes: [],
             olds: [],
             shots: [],
+            test: [
+            {
+                id: 1,
+                title: '«Голубые Гавайи»',
+                type: 'highball',
+                src: require('../img/blue-hawaii.jpg'),
+                likes: 0,
+                count: 0,
+                buy: 0,
+                composition: {
+                    id: 1,
+                    'White Rum': 30,
+                    'Malibu': 30,
+                    'Blue Curacao': 30,
+                    'Ананасовый сок': 100,
+                }
+            },
+            ]
         }
     },
 

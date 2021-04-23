@@ -4,6 +4,188 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        bar: [
+        {
+            id: 1,
+            name: 'White Rum',
+            price: 1958,
+            quantity: 1800,   
+        },
+        {
+            id: 2,
+            name: 'Black Rum',
+            price: 1958,
+            quantity: 900,           
+        },
+        {
+            id: 3,
+            name: 'Spiced Rum',
+            price: 1901,
+            quantity: 500,
+        },
+        {
+            id: 4,
+            name: 'Absinth',
+            price: 3555,
+            quantity: 700,         
+        },
+        {
+            id: 5,
+            name: 'Sambuca',
+            price: 1000,
+            quantity: 250,         
+        },
+        {
+            id: 6,
+            name: 'Aperol',
+            price: 2200,
+            quantity: 1000,            
+        },
+        {
+            id: 7,
+            name: 'Cointreau',
+            price: 1660,
+            quantity: 1000,           
+        },
+
+        {
+            id: 8,
+            name: 'Martini Rosso',
+            price: 1288,
+            quantity: 700,           
+        },
+        {
+            id: 9,
+            name: 'Whiskey',
+            price: 2519,
+            quantity: 1000,           
+        },
+        {
+            id: 10,
+            name: 'Marasca Cherry',
+            price: 1939,
+            quantity: 700,           
+        },
+
+        {
+            id: 11,
+            name: 'Vodka',
+            price: 300,
+            quantity: 300,            
+        },
+        {
+            id: 12,
+            name: 'Gin',
+            price: 2800,
+            quantity: 1000,          
+        },
+        {
+            id: 13,
+            name: 'Malibu',
+            price: 1375,
+            quantity: 1000,           
+        },
+
+        {
+            id: 14,
+            name: 'Cognac',
+            price: 1740,
+            quantity: 1000,           
+        },
+        {
+            id: 15,
+            name: 'Baileys',
+            price: 1936,
+            quantity: 500,       
+        },
+        {
+            id: 16,
+            name: 'Creme de Cafe',
+            price: 1939,
+            quantity: 700,         
+        },
+        {
+            id: 17,
+            name: 'Peachtree',
+            price: 2024,
+            quantity: 700,            
+        },
+        {
+            id: 18,
+            name: 'Tequila',
+            price: 3352,
+            quantity: 400,           
+        },
+        {
+            id: 19,
+            name: 'Blackcurrant Syrup',
+            price: 600,
+            quantity: 900,            
+        },
+        {
+            id: 20,
+            name: 'Orgeat Syrup',
+            price: 555,
+            quantity:  400,          
+        },
+
+        {
+            id: 21,
+            name: 'Simple Syrup',
+            price: 555,
+            quantity: 1600,         
+        },        
+        {
+            id: 22,
+            name: 'Cranberries Syrup',
+            price: 655,
+            quantity: 900,          
+        },
+
+        {
+            id: 23,
+            name: 'Passion Fruit Syrup',
+            price: 655,
+            quantity: 600,           
+        },       
+        {
+            id: 24,
+            name: 'Cherry Syrup',
+            price: 655,
+            quantity: 500,           
+        },
+
+        {
+            id: 25,
+            name: 'Blue curacao Syrup',
+            price: 600,
+            quantity: 900,      
+        },
+        {
+            id: 26,
+            name: 'Ginger Syrup',
+            price: 5,
+            quantity: 700,          
+        },
+        {
+            id: 27,
+            name: 'Strawberry Syrup',
+            price: 600,
+            quantity: 400,            
+        },
+        {
+            id: 28,
+            name: 'Grenadine Syrup',
+            price: 555,
+            quantity: 600,           
+        },
+        {
+            id: 29,
+            name: 'Mint Syrup',
+            price: 555,
+            quantity: 600,          
+        },
+        ],
         cocktails: [
         {
             id: 1,
@@ -13,10 +195,13 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 30 мл;
-            Malibu – 30 мл;
-            Blue Curacao – 30 мл;
-            Ананасовый сок – 100 мл`
+            composition: {
+                id: 1,
+                'White Rum': 30,
+                'Malibu': 30,
+                'Blue Curacao': 30,
+                'Ананасовый сок': 100,
+                }
         },
         {
             id: 2,
@@ -26,12 +211,15 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 30 мл;
-            Темный ром – 15 мл;
-            Malibu – 30 мл;
-            Ананасовый сок – 60 мл;
-            Апельсиновый сок – 60 мл;
-            Гренадин – 5 мл.`
+            composition: {
+                id: 2,
+                'Белый ром': 30,
+                'Темный ром': 15,
+                'Malibu': 30,
+                'Ананасовый сок': 60,
+                'Апельсиновый сок': 60,
+                'Гренадин': 5,
+            }
         },
         {
             id: 3,
@@ -41,15 +229,18 @@ const store = new Vuex.Store({
             likes: 3,
             count: 0,
             buy: 0,
-            composition: `Золотой ром – 20 мл;
-            Темный ром – 20 мл;
-            Белый ром – 20 мл;
-            Персиковый ликер – 15 мл;
-            Вишневый сироп – 15 мл;
-            Гренадин – 5 мл;
-            Ананасовый сок – 30 мл;
-            Апельсиновый сок – 30 мл.
-            Angostura – дэш.`
+            composition: {
+                id: 3,
+                'Золотой ром': 20,
+                'Темный ром': 20,
+                'Белый ром': 20,
+                'Персиковый ликер': 15,
+                'Вишневый сироп': 15,
+                'Гренадин': 5 ,            
+                'Ананасовый сок': 30,
+                'Апельсиновый сок': 30,
+                'Angostura': 1,        
+            },
         },
         {
             id: 4,
@@ -59,13 +250,15 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 30 мл;
-            Темный ром – 30 мл;
-            Сок лайма – 15 мл;
-            Апельсиновый сок  – 15 мл;
-            Ананасовый сок – 15 мл;
-            Сироп Маракуйя – 15 мл;
-            Гренадин – 15 мл`
+            composition: {
+                'Белый ром': 30,
+                'Темный ром': 30,
+                'Сок лайма': 15,
+                'Апельсиновый сок': 15,
+                'Ананасовый сок': 15,
+                'Сироп Маракуйя': 15,
+                'Гренадин': 15,
+            }
         },
         {
             id: 5,
@@ -75,9 +268,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 50 мл;
-            Ананасовый сок – 90 мл;
-            Malibu – 30 мл.`
+            composition: `Белый ром: 50,
+            Ананасовый сок: 90,
+            Malibu: 30,`
         },
         {
             id: 6,
@@ -88,7 +281,7 @@ const store = new Vuex.Store({
             count: 0,
             buy: 0,
             composition: `Черный чай –150 мл;
-            Белый ром – 30 мл;
+            Белый ром: 30,
             Сахарный сироп –15 мл;
             Сиропы –15 мл;
             Дольки лимона/апельсина.`
@@ -114,12 +307,14 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 30 мл;
-            Malibu – 30 мл;
-            Ананасовый сок – 60 мл;
-            Сок лайма – 15 мл;
-            Гренадин – 10 мл;
-            Клубничный сироп – 10 мл.`
+            composition: 
+                `Белый ром: 30,
+            Malibu: 30,
+            Ананасовый сок: 60,
+            Сок лайма: 15,
+            Гренадин: 10,
+            Клубничный сироп: 10,`
+            
         },
         {
             id: 9,
@@ -129,10 +324,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 45 мл;
-            Вишневый сок – 60 мл;
-            Сахарный сироп – 15 мл;
-            Клубничный сироп – 15 мл.`
+            composition: `Белый ром: 45,
+            Вишневый сок: 60,
+            Сахарный сироп: 15,
+            Клубничный сироп: 15,`
         },
         {
             id: 10,
@@ -142,12 +337,12 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 15 мл;
-            Водка – 15 мл;
-            Серебряная текила – 15 мл;
-            Абсент – 15 мл;
-            Blue Curacao – 10 мл;
-            Лимонный сок – 30 мл;
+            composition: `Белый ром: 15,
+            Водка: 15,
+            Серебряная текила: 15,
+            Абсент: 15,
+            Blue Curacao: 10,
+            Лимонный сок: 30,
             Спрайт.`
         },
         {
@@ -158,12 +353,12 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Абсент - 20 мл;
-            Водка - 20 мл; 
-            Cointreau - 20 мл;
-            Шотландский виски - 20 мл; 
-            Черносмородиновый сироп - 20 мл; 
-            Сок лайма - 20 мл.`
+            composition: `Абсент: 20,
+            Водка: 20, 
+            Cointreau: 20,
+            Шотландский виски: 20, 
+            Черносмородиновый сироп: 20, 
+            Сок лайма: 20,
         },
         {
             id: 12,
@@ -173,14 +368,13 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Джин – 30 мл;
-            Cointreau – 10 мл;
-            Ананасовый сок – 120 мл;
-            Сок лайма – 15 мл;
-            Вишневый сироп – 15 мл;
-            Гренадин – 10 мл;
-            Angostura – дэш.`
-        },
+            composition: `Джин: 30,
+            Cointreau: 10,
+            Ананасовый сок: 12,;
+            Сок лайма: 15,
+            Вишневый сироп: 15,
+            Гренадин: 10,
+            Angostura: дэ,        },
         {
             id: 13,
             title: '«Базиликовый Смэш»',
@@ -189,9 +383,9 @@ const store = new Vuex.Store({
             likes: 2,
             count: 0,
             buy: 0,
-            composition: `Джин – 60 мл;
-            Сахарный сироп – 20 мл;
-            Лимонный сок – 30 мл;
+            composition: `Джин: 60,
+            Сахарный сироп: 20,
+            Лимонный сок: 30,
             Базилик.`
         },
         {
@@ -202,10 +396,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Джин – 50 мл;
-            Сахарный сироп – 20 мл;
-            Лимонный сок – 20 мл;
-            Ликёр Шамбор – 20 мл.`
+            composition: `Джин: 50,
+            Сахарный сироп: 20,
+            Лимонный сок: 20,
+            Ликёр Шамбор: 20,`
         },
         {
             id: 15,
@@ -215,9 +409,9 @@ const store = new Vuex.Store({
             likes: 10,
             count: 0,
             buy: 0,
-            composition: `Джин – 50 мл;
-            Лимонный сок – 25 мл;
-            Сахарный сироп – 25 мл;
+            composition: `Джин: 50,
+            Лимонный сок: 25,
+            Сахарный сироп: 25,
             Содовая.`
         },
         {
@@ -228,12 +422,12 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Текила – 45 мл;
-            Cointreau – 25 мл;
-            Сок лайма – 30 мл;
-            Апельсиновый сок – 30 мл;
-            Сахарный сироп – 30 мл;
-            Пиво Корона – 1 бутылка (0,33 л).`
+            composition: `Текила: 45,
+            Cointreau: 25,
+            Сок лайма: 30,
+            Апельсиновый сок: 30,
+            Сахарный сироп: 30,
+            Пиво Корона: 1 ,лка (0,33 л).`
         },
         {
             id: 17,
@@ -243,10 +437,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Водка – 40 мл;
-            Персиковый ликер – 20 мл;
-            Апельсиновый сок – 40 мл;
-            Клюквенный сок – 40 мл.`
+            composition: `Водка: 40,
+            Персиковый ликер: 20,
+            Апельсиновый сок: 40,
+            Клюквенный сок: 40,`
         },
         {
             id: 18,
@@ -256,11 +450,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Водка – 50мл;
-            Клюквенный сок – 120 мл;
-            Сахарный сироп – 15 мл;
-            Angostura – дэш.`
-        },
+            composition: `Водка: 50,            Клюквенный сок: 12,;
+            Сахарный сироп: 15,
+            Angostura: дэ,        },
         {
             id: 19,
             title: '«Космополитен»',
@@ -269,10 +461,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Водка – 45 мл;
-            Cointreau – 15 мл;
-            Сок лайма – 10 мл;
-            Клюквенный сок – 30 мл.`
+            composition: `Водка: 45,
+            Cointreau: 15,
+            Сок лайма: 10,
+            Клюквенный сок: 30,`
         },
         {
             id: 20,
@@ -282,9 +474,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Серебряная текила – 40 мл; 
-            Cointreau – 20 мл; 
-            Сок лайма – 40 мл. `
+            composition: `Серебряная текила: 40, 
+            Cointreau: 20, 
+            Сок лайма: 40, `
         },
         {
             id: 21,
@@ -294,9 +486,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Белый ром – 45 мл; 
+            composition: `Белый ром: 45, 
             Сок лайма– 30 мл;
-            Сахарный сироп – 15 мл. `
+            Сахарный сироп: 15, `
         },
         {
             id: 22,
@@ -306,11 +498,11 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Ром со специями – 40 мл;
-            Персиковый ликер – 15 мл;
-            Cointreau – 10 мл;
-            Лимонный сок – 15 мл;
-            Сидр полусухой – 40 мл.`
+            composition: `Ром со специями: 40,
+            Персиковый ликер: 15,
+            Cointreau: 10,
+            Лимонный сок: 15,
+            Сидр полусухой: 40,`
         },
         {
             id: 23,
@@ -320,11 +512,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Тёмный – 45 мл;
-            Сахарный сироп – 30 мл;
-            Angostura – дэш;
-            Сок лайма – 25 мл;
-            Игристое вино – 60 мл;
+            composition: `Тёмный: 45,
+            Сахарный сироп: 30,
+            Angostura: дэ,           Сок лайма: 25,
+            Игристое вино: 60,
             Мята.`
         },
         {
@@ -335,10 +526,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Джин – 60 мл;
-            Мартини Россо – 30 мл;
-            Вишневый сироп – 5 мл;
-            Angostura – дэш. `
+            composition: `Джин: 60,
+            Мартини Россо: 30,
+            Вишневый сироп: 5 ,            Angostura: дэ,
         },
         {
             id: 25,
@@ -348,9 +538,9 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Водка – 30 мл;
-            Cointreau – 30 мл;
-            Лимонный сок – 30 мл.`
+            composition: `Водка: 30,
+            Cointreau: 30,
+            Лимонный сок: 30,`
         },
         {
             id: 26,
@@ -360,10 +550,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `1 Самбука – 20 мл;
-            3 Абсент – 20 мл;
-            2 Baileys – 20 мл;
-            4 Гренадин – 5 мл.`
+            composition: `1 Самбука: 20,
+            3 Абсент: 20,
+            2 Baileys: 20,
+            4 Гренадин: 5 ,
         },
         {
             id: 27,
@@ -373,11 +563,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `1 Malibu – 20 мл;
-            3 Белый ром – 20 мл;
-            4 Baileys – 5 мл;
-            2 Cointreau – 20 мл;
-            5 Blue Curacao – 5 мл.`
+            composition: `1 Malibu: 20,
+            3 Белый ром: 20,
+            4 Baileys: 5 ,            2 Cointreau: 20,
+            5 Blue Curacao: 5 ,
         },
         {
             id: 28,
@@ -398,9 +587,8 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Игристое вино  – 100 мл;
-            Angostura – дэш;
-            Сахар – 1 кусочек.    `
+            composition: `Игристое вино : 10,;
+            Angostura: дэ,           Сахар: 1 ,чек.    `
         },
         {
             id: 30,
@@ -410,10 +598,10 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Джин – 30 мл;
+            composition: `Джин: 30,
             Игристое вино –50 мл;
-            Сахарный сироп – 15 мл;
-            Лимонный сок – 15 мл.   `
+            Сахарный сироп: 15,
+            Лимонный сок: 15,   `
         },
         {
             id: 31,
@@ -423,8 +611,8 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Проссеко – 100 мл;
-            Персиковый сок - 50 мл.`
+            composition: `Проссеко: 10,;
+            Персиковый сок: 50,`
         },
         {
             id: 32,
@@ -475,10 +663,7 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `1 Гренадин – 15 мл
-            2 Самбука – 15 мл
-            3 Baileys – 15 мл
-            4 Абсент – 15 мл`
+            composition: `1 Гренадин: 15,            2 Самбука: 15,            3 Baileys: 15,            4 Абсент: 15,
         },
         {
             id: 36,
@@ -488,9 +673,7 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `Самбука – 40 мл
-            Baileys – 10 мл
-            Черносмородиновый сироп – 10 мл`
+            composition: `Самбука: 40,            Baileys: 10,            Черносмородиновый сироп: 10,
         },
         {
             id: 37,
@@ -500,12 +683,7 @@ const store = new Vuex.Store({
             likes: 0,
             count: 0,
             buy: 0,
-            composition: `1 Самбука – 20 мл
-            2 Серебряная текила – 20 мл
-            5 Абсент – 10 мл
-            Blue Curacao – 3 мл
-            Baileys – 3 мл`
-        },
+            composition: `1 Самбука: 20,            2 Серебряная текила: 20,            5 Абсент: 10,            Blue Curacao: 3 ,           Baileys: 3 ,        },
         {
             id: 38,
             title: '«Б-52»',
@@ -601,7 +779,7 @@ const store = new Vuex.Store({
             }
         },
         buy({ commit, state }) {
-            for (let i = state.cart.length - 1; i > -1; i--) {
+            for (let i = state.cart.length: 1;, -1; i--) {
                 commit('buy', i);
                 console.log(`Всего куплено уже ${state.cart[i].buy} ${state.cart[i].title}`)
                 commit('deleteItem', i);                
