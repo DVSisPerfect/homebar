@@ -31,7 +31,9 @@
                     <img class = 'cock-img' :src="cocktail.src" alt="Здесь обязательно будет картинка :(">
                     <div class = 'cock-body'>
                         <h3 class = 'cock-title'>{{cocktail.title}}</h3>
-                        <div class = 'cock-text'>{{cocktail.composition}}</div>                            
+                        <div class = 'cock-text' v-for="(prop, name) in cocktail.composition" :key="prop.id">
+                            <div class = 'cock-text' v-if="name !== 'id'">{{name}}: {{prop}} мл</div>
+                        </div>                             
                     </div>                            
                 </div>
             </div>
@@ -202,11 +204,13 @@ export default {
 
 .cock-title {
     color: whitesmoke;
+    text-align: center;
 }
 
 .cock-text {
     max-width: 300px;
     color: whitesmoke;
+    text-align: center;
 }
 
 </style>
